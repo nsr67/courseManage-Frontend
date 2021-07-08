@@ -1,0 +1,100 @@
+<app-navigation></app-navigation>
+<div class="container col-md-6">
+    <div class="card">
+        <div style="text-align: center;">
+            <h1>EDIT COURSE</h1>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="">ID: </label>
+                    <input required #courseNameControl="ngModel" [(ngModel)]="courses.id" name="id" type="text" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="">Course Name: </label>
+                    <input required #courseNameControl="ngModel" [(ngModel)]="courses.courseName" name="courseName" type="text" class="form-control" placeholder="Course Name">
+                    <div *ngIf="courseNameControl.valid; else courseNameInValid">
+                        <p style="color:rgb(23, 196, 23)">Looks Good!!!</p>
+                    </div>
+                    <ng-template #courseNameInValid>
+                        <p style="color:rgb(255, 0, 0)">Course name is Invalid</p>
+                    </ng-template>
+                </div>
+                <div class="form-group">
+                    <label for="">Description: </label>
+                    <input required #descriptionControl="ngModel" [(ngModel)]="courses.description" name="description" type="text" class="form-control" placeholder="Description" required>
+                    <div *ngIf="descriptionControl.valid; else descriptionInValid">
+                        <p style="color:rgb(23, 196, 23)">Looks Good!!!</p>
+                    </div>
+                    <ng-template #descriptionInValid>
+                        <p style="color:rgb(255, 0, 0)">Description is Invalid</p>
+                    </ng-template>
+                </div>
+                <div class="form-group">
+                    <label for="">Pre-Requisites: </label>
+                    <input required #preRequisiteControl="ngModel" [(ngModel)]="courses.prerequesite" name="prerequesite" type="text" class="form-control" placeholder="Pre-Requisites" required>
+                    <div *ngIf="preRequisiteControl.valid; else preRequisiteInValid">
+                        <p style="color:rgb(23, 196, 23)">Looks Good!!!</p>
+                    </div>
+                    <ng-template #preRequisiteInValid>
+                        <p style="color:rgb(255, 0, 0)">Pre-Requisite is Invalid</p>
+                    </ng-template>
+                </div>
+                <div class="form-group">
+                    <label for="">Location: </label>
+                    <input required #locationControl="ngModel" [(ngModel)]="courses.location" name="location" type="text" class="form-control" placeholder="Location" required>
+                    <div *ngIf="locationControl.valid; else locationInValid">
+                        <p style="color:rgb(23, 196, 23)">Looks Good!!!</p>
+                    </div>
+                    <ng-template #locationInValid>
+                        <p style="color:rgb(255, 0, 0)">Location is Invalid</p>
+                    </ng-template>
+                </div>
+                <div class="form-group">
+                    <label for="">Feedback: </label>
+                    <input required #feedbackControl="ngModel" [(ngModel)]="courses.feedback" name="feedback" type="text" class="form-control" placeholder="Feedback" required>
+                    <div *ngIf="feedbackControl.valid; else feedbackInValid">
+                        <p style="color:rgb(23, 196, 23)">Looks Good!!!</p>
+                    </div>
+                    <ng-template #feedbackInValid>
+                        <p style="color:rgb(255, 0, 0)">Feedback is Invalid</p>
+                    </ng-template>
+                </div>
+                <div class="form-group">
+                    <label for="">Last Updated: </label>
+                    <input required #lastUpdatedControl="ngModel" [(ngModel)]="courses.lastupdated" name="lastupdated" type="date" class="form-control" placeholder="Last updated" required>
+                    <div *ngIf="lastUpdatedControl.valid; else lastUpdatedInValid">
+                        <p style="color:rgb(23, 196, 23)">Looks Good!!!</p>
+                    </div>
+                    <ng-template #lastUpdatedInValid>
+                        <p style="color:rgb(255, 0, 0)">Last-Updated is Invalid</p>
+                    </ng-template>
+                </div>
+                <hr>
+                <h1>Add extra Skills and Creators</h1>
+                <hr>
+                <div class="form-group">
+                    <label for="">Current Skills: </label>
+                    <div *ngFor="let skill of courses.skill">
+                        <input value="{{skill.name}}" type="text" class="form-control" style="margin-bottom: 10px;" readonly>
+                    </div>
+                    <input class="form-control" [(ngModel)]="skill" name="skill" type="text" placeholder="Skill" required>
+                    <button (click)="addSkills()" class="btn btn-outline-dark" style="margin: 10px 0 10px 0;">Add Skill</button>
+                </div>
+                <div class="form-group">
+                    <label for="">Current Creators: </label>
+                    <div *ngFor="let creator of courses.creator">
+                        <input value="{{creator.name}}" type="text" class="form-control" style="margin-bottom: 10px;" readonly>
+                    </div>
+                    <input class="form-control" [(ngModel)]="creator" name="creator" type="text" placeholder="Creator Name">
+                    <button (click)="addCreators()" class="btn btn-outline-dark" style="margin: 10px 0 10px 0;">Add Creator</button>
+
+                </div>
+                <div style="margin-top: 20px; text-align: center;">
+                    <button (click)="modify(courses)" class="btn btn-outline-primary" style="width: 100px;"><i class="fas fa-check-circle"></i></button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

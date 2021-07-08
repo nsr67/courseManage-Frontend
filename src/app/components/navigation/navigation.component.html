@@ -1,0 +1,36 @@
+<!-- <div class="nav">
+    <div class="img">
+    </div>
+    <a (click)="goToCourse()">Course</a>
+    <a (click)="goToTrainer()">Trainer</a>
+    <a (click)="goToTrends()">Trends</a>
+</div> -->
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <img src="../../../assets/Images/Accolite.png" alt="Accolite Digital Logo" width="40" height="45">
+    <div id="navbarNav" style="margin-left: 20px;">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" (click)="goToCourse()">COURSES <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="goToNewCourse()">NEW COURSE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="goToMailService()">MAIL SERVICE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="goToTrends()">TRENDS</a>
+            </li>
+        </ul>
+    </div>
+    <div class="right-nav">
+        <ul class="navbar-nav right">
+            <li style="margin-top: 10px;"><img [src]="user.photoUrl" alt="user-avatar" class="user-avatar" id="image" /></li>
+            <li style="color: #fff;">
+                {{user.name}}<br>{{user.email}}<br>
+                <button (click)="signOut()" class="btn btn-outline-info"><i class="fas fa-sign-out-alt"></i></button>
+            </li>
+        </ul>
+    </div>
+</nav>

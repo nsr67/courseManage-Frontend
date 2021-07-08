@@ -1,0 +1,43 @@
+<app-navigation></app-navigation>
+<div class="container">
+    <div class="searching">
+        <input class="form-control" type="text" name="courseName" [(ngModel)]="courseName" (ngModelChange)="Search()" placeholder="Search by course name...">
+    </div>
+    <div class="card ">
+        <div class="card-header" style="text-align: center;">
+            <h1>COURSE DETAILS</h1>
+        </div>
+        <table class="table table-hover table-dark table-bordered">
+            <thead>
+                <tr class="text-center">
+                    <th>ID</th>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Pre-Requisites</th>
+                    <th>Location</th>
+                    <th>Feedback</th>
+                    <th>Last Updated</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let course of courses" class="text-center">
+                    <td>{{course.id}}</td>
+                    <td>{{course.courseName}}</td>
+                    <td>{{course.description}}</td>
+                    <td>{{course.prerequesite}}</td>
+                    <td>{{course.location}}</td>
+                    <td>{{course.feedback}}</td>
+                    <td>{{course.lastupdated}}</td>
+                    <td><button (click)="edit(course.id)" class="btn btn-outline-warning"><i class="fas fa-pen"></i></button>
+                        <button (click)="delete(course)" class="btn btn-outline-danger" style="margin-left: 10px;"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <button (click)="showSkills()" class="btn btn-outline-dark">SHOW SKILLS</button>
+        <button (click)="showTrainers()" class="btn btn-outline-dark" style="margin-left: 10px;">SHOW CREATORS</button>
+    </div>
+</div>

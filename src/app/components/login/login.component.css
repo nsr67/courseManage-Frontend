@@ -1,0 +1,18 @@
+#logo {
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+}
+
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.google {
+    margin-left: 40%;
+}
+
+.google button {
+    width: 30%;
+}

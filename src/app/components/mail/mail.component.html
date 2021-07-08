@@ -1,0 +1,35 @@
+<app-navigation></app-navigation>
+<div class="container">
+    <div class="searching">
+        <input class="form-control" type="text" name="courseName" [(ngModel)]="courseName" (ngModelChange)="Search()" placeholder="Search by course name...">
+    </div>
+    <div class="card ">
+        <div class="card-header" style="text-align: center;">
+            <h1>SEND MAILS</h1>
+        </div>
+        <table class="table table-hover table-success">
+            <thead>
+                <tr class="text-center">
+                    <th>ID</th>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Pre-Requisites</th>
+                    <th>Location</th>
+                    <th>Last Updated</th>
+                    <th>Mail Me</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let course of courses" class="text-center">
+                    <td>{{course.id}}</td>
+                    <td>{{course.courseName}}</td>
+                    <td>{{course.description}}</td>
+                    <td>{{course.prerequesite}}</td>
+                    <td>{{course.location}}</td>
+                    <td>{{course.lastupdated}}</td>
+                    <td><button (click)="MailMe(course)" class="btn btn-outline-danger"><i class="fas fa-paper-plane"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

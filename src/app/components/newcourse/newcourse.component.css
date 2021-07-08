@@ -1,0 +1,16 @@
+.container {
+    margin-top: 100px;
+}
+
+.card-header {
+    background-color: rgb(56, 55, 55);
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    height: 60px;
+    padding: 10px;
+}

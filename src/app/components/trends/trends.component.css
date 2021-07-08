@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    margin-top: 200px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container .left {
+    width: 40%;
+    height: 40%;
+}
+
+.container .right {
+    width: 50%;
+    height: 40%;
+}
